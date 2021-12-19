@@ -1,0 +1,7 @@
+.sideNavRow {
+  display: flex;
+  align-items: center;
+}
+.sideNavRow:hover {
+  background-color: lightgray;
+}

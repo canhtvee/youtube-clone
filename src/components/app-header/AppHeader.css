@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+}
+
+.header_left {
+  display: flex;
+  align-items: center;
+}
+
+.header_logo {
+  height: 25px;
+  margin-left: 20px;
+  object-fit: contain;
+}
+
+.header_input {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.header_input > input {
+  flex: 1;
+  height: 23px;
+  border: 1px solid lightgrey;
+}
+
+.header_input > input:focus {
+  outline: none;
+}
+
+.header_input_btn {
+  width: 50px !important;
+  height: 25px !important;
+  background-color: #fafafa;
+  border: 1px solid lightgrey;
+  color: grey;
+}
+
+.header_icons {
+  display: flex;
+  align-items: center;
+}
+
+.header_avatar {
+  height: 30px;
+  border-radius: 50%;
+}
