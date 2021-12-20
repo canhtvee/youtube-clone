@@ -18,11 +18,7 @@ export default function AppHeader() {
   return (
     <div className="header">
       <div className="header_left">
-        <IconBtn
-          title="Search with your voice"
-          activeIcon={<Menu />}
-          inactiveIcon={<Menu />}
-        />
+        <IconBtn title="" activeIcon={<Menu />} inactiveIcon={<Menu />} />
         <img
           className="header_logo"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1920px-YouTube_Logo_2017.svg.png"

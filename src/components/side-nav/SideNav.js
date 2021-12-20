@@ -1,6 +1,6 @@
 import React from "react";
-import "./SideNav.css";
 import SideNavRow from "../side-nav-row/SideNavRow";
+import "./SideNav.css";
 
 import {
   Explore,
@@ -12,7 +12,7 @@ import {
   Subscriptions,
   SubscriptionsOutlined,
   ThumbUp,
-  ThumbUpOutlined,
+  ThumbUpAltOutlined,
   VideoLibrary,
   VideoLibraryOutlined,
   WatchLater,
@@ -22,41 +22,37 @@ import {
 export default function SideNav() {
   return (
     <div className="sideNav">
-      <SideNavRow
-        title="Home"
-        activeIcon={<Home />}
-        inactiveIcon={<HomeOutlined />}
-      />
+      <SideNavRow title="Home" ActiveIcon={Home} InactiveIcon={HomeOutlined} />
       <SideNavRow
         title="Explore"
-        activeIcon={<Explore />}
-        inactiveIcon={<ExploreOutlined />}
+        ActiveIcon={Explore}
+        InactiveIcon={ExploreOutlined}
       />
       <SideNavRow
         title="Subscriptions"
-        activeIcon={<Subscriptions />}
-        inactiveIcon={<SubscriptionsOutlined />}
+        ActiveIcon={Subscriptions}
+        InactiveIcon={SubscriptionsOutlined}
       />
-      <hr />
       <SideNavRow
         title="Library"
-        activeIcon={<VideoLibrary />}
-        inactiveIcon={<VideoLibraryOutlined />}
+        ActiveIcon={VideoLibrary}
+        InactiveIcon={VideoLibraryOutlined}
       />
+
       <SideNavRow
         title="History"
-        activeIcon={<History />}
-        inactiveIcon={<HistoryOutlined />}
+        ActiveIcon={History}
+        InactiveIcon={HistoryOutlined}
       />
       <SideNavRow
         title="Watch later"
-        activeIcon={<WatchLater />}
-        inactiveIcon={<WatchLaterOutlined />}
+        ActiveIcon={WatchLater}
+        InactiveIcon={WatchLaterOutlined}
       />
       <SideNavRow
         title="Liked videos"
-        activeIcon={<ThumbUp />}
-        inactiveIcon={<ThumbUpOutlined />}
+        ActiveIcon={ThumbUp}
+        InactiveIcon={ThumbUpAltOutlined}
       />
     </div>
   );

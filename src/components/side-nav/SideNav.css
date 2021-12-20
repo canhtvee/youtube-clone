@@ -2,4 +2,12 @@
   display: flex;
   flex: 0.2;
   flex-direction: column;
+  min-width: 200px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+hr {
+  background-color: rgb(240, 240, 240);
+  min-width: 300px;
 }

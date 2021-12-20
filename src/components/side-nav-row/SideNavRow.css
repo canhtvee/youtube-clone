@@ -1,7 +1,29 @@
-.sideNavRow {
+.sideNavRow_inactive {
   display: flex;
   align-items: center;
 }
-.sideNavRow:hover {
+
+.sideNavRow_active {
+  display: flex;
+  align-items: center;
   background-color: lightgray;
+}
+.sideNavRow_inactive:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.sideNavRow_text_active {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.sideNavRow_text_inactive {
+  font-weight: normal;
+  font-size: medium;
+}
+
+.sideNavRow_icon {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 20px !important;
 }

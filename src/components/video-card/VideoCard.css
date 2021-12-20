@@ -1,0 +1,18 @@
+.videoCard {
+  margin: 10px;
+  padding-left: 20px;
+  width: 300px;
+  height: 215px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.videoCard_thumbnail {
+  width: 300px;
+}
+
+.videoCard_title {
+  width: 300px;
+  font-weight: bold;
+  font-size: medium;
+}
