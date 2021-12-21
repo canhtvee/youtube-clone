@@ -1,7 +1,10 @@
 .videosPage {
-  flex: auto;
+  flex: 0.85;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 20px;
+  top: 60px;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
   background-color: rgb(240, 240, 240);
 }

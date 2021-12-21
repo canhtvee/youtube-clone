@@ -1,0 +1,4 @@
+.generalPage {
+  display: flex;
+  flex-direction: row;
+}

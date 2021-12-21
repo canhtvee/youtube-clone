@@ -1,0 +1,10 @@
+.playingPage {
+  display: flex;
+  justify-content: center;
+  background-color: lightblue;
+}
+
+.playingFrame {
+  object-fit: contain;
+  display: block;
+}

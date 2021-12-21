@@ -1,7 +1,7 @@
 import React from "react";
 import "./VideosPage.css";
 import { VideosData } from "../../VideosData";
-import VideoCard from "../video-card/VideoCard";
+import VideoCard from "./video-card/VideoCard";
 
 export default function VideosPage() {
   console.log(VideosData);

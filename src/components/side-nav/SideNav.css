@@ -1,13 +1,25 @@
 .sideNav {
   display: flex;
-  flex: 0.2;
+  flex: 0.15;
   flex-direction: column;
   min-width: 200px;
+  height: calc(100vh - 60px);
   position: sticky;
-  top: 0;
+  top: 60px;
   background-color: white;
+  overflow-y: scroll;
+  scrollbar-color: white grey;
 }
-hr {
-  background-color: rgb(240, 240, 240);
-  min-width: 300px;
+.sideNav::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sideNav:hover::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 5px;
+  min-height: 60px;
+}
+
+vl.sideNav_divider {
+  border-top: 1px solid lightgray;
 }

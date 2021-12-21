@@ -1,6 +1,6 @@
 import React from "react";
-import SideNavRow from "../side-nav-row/SideNavRow";
 import "./SideNav.css";
+import SideNavRow from "./side-nav-row/SideNavRow";
 
 import {
   Explore,
@@ -33,6 +33,9 @@ export default function SideNav() {
         ActiveIcon={Subscriptions}
         InactiveIcon={SubscriptionsOutlined}
       />
+
+      <vl className="sideNav_divider" />
+
       <SideNavRow
         title="Library"
         ActiveIcon={VideoLibrary}
