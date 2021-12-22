@@ -8,19 +8,22 @@ import {
 } from "react-router-dom";
 
 import AppHeader from "./components/app-header/AppHeader";
-import PlayingPage from "./components/playing-page/PlayingPage";
-import GeneralPage from "./components/general-page/GeneralPage";
+import GeneralLayout from "./components/layout-general/GeneralLayout";
+import PlayingLayout from "./components/layout-playing/PlayingLayout";
+import { PlayingVideoProvider } from "./contexts/PlayingVideoContext";
 
 function App() {
   return (
     <Router>
       <div className="app">
         <AppHeader />
-        <Routes>
-          <Route exact path="/" element={<GeneralPage />} />
-          <Route path="/playing" element={<PlayingPage />} />
-        </Routes>
-        <Outlet />
+        <PlayingVideoProvider>
+          <Routes>
+            <Route exact path="/" element={<GeneralLayout />} />
+            <Route path="/playing" element={<PlayingLayout />} />
+          </Routes>
+          <Outlet />
+        </PlayingVideoProvider>
       </div>
     </Router>
   );

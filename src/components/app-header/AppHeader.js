@@ -1,6 +1,5 @@
 import React from "react";
 import "./AppHeader.css";
-
 import {
   AppsOutlined,
   Menu,
@@ -11,15 +10,18 @@ import {
   VideoCallOutlined,
   VideoCall,
 } from "@mui/icons-material";
-import IconBtn from "../commons/IconBtn";
+import IconBtn from "../icon-button/IconBtn";
 import Tooltip from "@mui/material/Tooltip";
+import { useNavigate } from "react-router-dom";
 
 export default function AppHeader() {
+  const navigate = useNavigate();
   return (
     <div className="header">
       <div className="header_left">
         <IconBtn title="" activeIcon={<Menu />} inactiveIcon={<Menu />} />
         <img
+          onClick={() => navigate("/")}
           className="header_logo"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1920px-YouTube_Logo_2017.svg.png"
           alt=""

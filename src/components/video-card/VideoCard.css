@@ -5,6 +5,7 @@
   height: 215px;
   word-wrap: break-word;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .videoCard_thumbnail {
@@ -15,4 +16,6 @@
   width: 300px;
   font-weight: bold;
   font-size: medium;
+  padding: 0px;
+  margin: 0px;
 }

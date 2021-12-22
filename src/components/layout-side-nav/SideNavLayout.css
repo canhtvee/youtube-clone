@@ -1,4 +1,4 @@
-.sideNav {
+.sideNavLayout {
   display: flex;
   flex: 0.15;
   flex-direction: column;
@@ -10,16 +10,16 @@
   overflow-y: scroll;
   scrollbar-color: white grey;
 }
-.sideNav::-webkit-scrollbar {
+.sideNavLayout::-webkit-scrollbar {
   width: 10px;
 }
 
-.sideNav:hover::-webkit-scrollbar-thumb {
+.sideNavLayout:hover::-webkit-scrollbar-thumb {
   background-color: grey;
   border-radius: 5px;
   min-height: 60px;
 }
 
-vl.sideNav_divider {
+vl.sideNavLayout_divider {
   border-top: 1px solid lightgray;
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import "./SideNav.css";
-import SideNavRow from "./side-nav-row/SideNavRow";
+import "./SideNavLayout.css";
+import SideNavRow from "../side-nav-row/SideNavRow";
 
 import {
   Explore,
@@ -19,9 +19,9 @@ import {
   WatchLaterOutlined,
 } from "@mui/icons-material";
 
-export default function SideNav() {
+export default function SideNavLayout() {
   return (
-    <div className="sideNav">
+    <div className="sideNavLayout">
       <SideNavRow title="Home" ActiveIcon={Home} InactiveIcon={HomeOutlined} />
       <SideNavRow
         title="Explore"
@@ -34,7 +34,7 @@ export default function SideNav() {
         InactiveIcon={SubscriptionsOutlined}
       />
 
-      <vl className="sideNav_divider" />
+      {/* <vl className="sideNavLayout_divider" /> */}
 
       <SideNavRow
         title="Library"
