@@ -1,62 +1,38 @@
 import React from "react";
 import "./SideNavLayout.css";
 import SideNavRow from "../side-nav-row/SideNavRow";
-
 import {
-  Explore,
-  ExploreOutlined,
-  History,
-  HistoryOutlined,
-  Home,
-  HomeOutlined,
-  Subscriptions,
-  SubscriptionsOutlined,
-  ThumbUp,
-  ThumbUpAltOutlined,
-  VideoLibrary,
-  VideoLibraryOutlined,
-  WatchLater,
-  WatchLaterOutlined,
-} from "@mui/icons-material";
+  SideNavItemIcons,
+  SideNavItemTitles,
+  SideNavItemNames,
+} from "./SideNavItems";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SideNavLayout() {
+  const [activeItem, setActiveItem] = useState("Home");
+  const navigate = useNavigate();
+
+  const handleClick = (title) => () => {
+    setActiveItem(title);
+    const path = title === "Home" ? "/" : `/feed/${SideNavItemNames[title]}`;
+    navigate(path);
+  };
+
   return (
     <div className="sideNavLayout">
-      <SideNavRow title="Home" ActiveIcon={Home} InactiveIcon={HomeOutlined} />
-      <SideNavRow
-        title="Explore"
-        ActiveIcon={Explore}
-        InactiveIcon={ExploreOutlined}
-      />
-      <SideNavRow
-        title="Subscriptions"
-        ActiveIcon={Subscriptions}
-        InactiveIcon={SubscriptionsOutlined}
-      />
-
-      {/* <vl className="sideNavLayout_divider" /> */}
-
-      <SideNavRow
-        title="Library"
-        ActiveIcon={VideoLibrary}
-        InactiveIcon={VideoLibraryOutlined}
-      />
-
-      <SideNavRow
-        title="History"
-        ActiveIcon={History}
-        InactiveIcon={HistoryOutlined}
-      />
-      <SideNavRow
-        title="Watch later"
-        ActiveIcon={WatchLater}
-        InactiveIcon={WatchLaterOutlined}
-      />
-      <SideNavRow
-        title="Liked videos"
-        ActiveIcon={ThumbUp}
-        InactiveIcon={ThumbUpAltOutlined}
-      />
+      {SideNavItemTitles.map((title, index) => {
+        return (
+          <SideNavRow
+            key={index}
+            title={title}
+            ActiveIcon={SideNavItemIcons[index * 2]}
+            InactiveIcon={SideNavItemIcons[index * 2 + 1]}
+            activeItem={activeItem}
+            onClick={handleClick(title)}
+          />
+        );
+      })}
     </div>
   );
 }

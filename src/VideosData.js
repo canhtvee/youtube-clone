@@ -6,12 +6,6 @@ export const VideosData = [
       "TOTTENHAM - LIVERPOOL: CUỘC ĐẤU SIÊU HẤP DẪN, NHỮNG CƠ HỘI MƯỜI MƯƠI BỊ BỎ LỠ | NGOẠI HẠNG ANH 21/22",
   },
   {
-    id: "jrpM5BqbgPw",
-    thumbnail: "https://i.ytimg.com/vi/jrpM5BqbgPw/mqdefault.jpg",
-    title:
-      "NEWCASTLE - MAN CITY | MAN XANH VỮNG NGÔI ĐẦU, LẬP KỶ LỤC THẮNG | NGOẠI HẠNG ANH 2021/2022",
-  },
-  {
     id: "uPLd462LHn0",
     thumbnail: "https://i.ytimg.com/vi/uPLd462LHn0/mqdefault.jpg",
     title:
@@ -114,37 +108,3 @@ export const VideosData = [
       "MANCHESTER CITY - WOLVERHAMPTON | TÌNH HUỐNG XOAY CHUYỂN CỤC DIỆN TRẬN ĐẤU | NGOẠI HẠNG ANH 21/22",
   },
 ];
-
-// async function fetchVideosList() {
-//   const API_KEY = "AIzaSyAJcItwoGmca60VHbby3LJentpMH1Mzp1A";
-//   const PLAY_LIST_HTTP = "https://www.googleapis.com/youtube/v3/playlistItems";
-
-//   const res = await fetch(`
-// ${PLAY_LIST_HTTP}?
-// part=snippet
-// &playlistId=PLiaWrX4zmrTmAVd0zQuLlXsTNcC62j5rN
-// &maxResults=20
-// &key=${API_KEY}
-// `);
-//   const data = await res.json();
-//   console.log(data.items);
-//   const videosList = getVideosList(data.items);
-//   console.log(videosList);
-// }
-
-// function getVideosList(items) {
-//   const videosList = [];
-
-//   items.map((item) => {
-//     if (item.snippet) {
-//       const { resourceId, title, thumbnails } = item.snippet;
-//       let video = {};
-//       video.id = resourceId.videoId;
-//       video.title = title;
-//       video.thumbnail = thumbnails.medium ? thumbnails.medium.url : "";
-//       videosList.push(video);
-//     }
-//   });
-
-//   return videosList;
-// }

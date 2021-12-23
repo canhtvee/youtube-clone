@@ -1,10 +1,9 @@
 import React from "react";
 import "./PlayingLayout.css";
-import { useContext } from "react";
-import { PlayingVideoContext } from "../../contexts/PlayingVideoContext";
+import { useParams } from "react-router-dom";
 
 export default function PlayingLayout() {
-  const { videoId } = useContext(PlayingVideoContext);
+  const videoId = useParams().id;
   return (
     <div className="playingLayout">
       <iframe

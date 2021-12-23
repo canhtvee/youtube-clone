@@ -1,5 +1,15 @@
 .videosLayout {
   flex: 0.85;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(240, 240, 240);
+}
+
+.videosLayout > h2 {
+  margin-left: 40px;
+}
+
+.videosLayout_content {
   display: grid;
   top: 60px;
   /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
