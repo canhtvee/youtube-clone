@@ -13,9 +13,18 @@ import {
 import IconBtn from "../icon-button/IconBtn";
 import Tooltip from "@mui/material/Tooltip";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function AppHeader() {
+  const [searchText, setSearchText] = useState("");
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
+  };
   const navigate = useNavigate();
+  const handleSearch = () => {
+    navigate(`/results/search_query=${searchText}`);
+  };
+
   return (
     <div className="header">
       <div className="header_left">
@@ -29,9 +38,14 @@ export default function AppHeader() {
       </div>
 
       <div className="header_input">
-        <input type="text" placeholder="search" />
+        <input
+          type="text"
+          placeholder="search"
+          value={searchText}
+          onChange={handleChange}
+        />
         <Tooltip title="Search">
-          <Search className="header_input_btn" />
+          <Search className="header_input_btn" onClick={handleSearch} />
         </Tooltip>
 
         <IconBtn

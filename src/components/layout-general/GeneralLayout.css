@@ -3,12 +3,12 @@
   flex-direction: row;
 }
 
-.generalChildLayout {
+.generalFeedLayout {
   flex: 0.85;
   display: flex;
   flex-direction: column;
   background-color: rgb(240, 240, 240);
 }
-.generalChildLayout > h2 {
+.generalFeedLayout > h2 {
   margin-left: 40px;
 }

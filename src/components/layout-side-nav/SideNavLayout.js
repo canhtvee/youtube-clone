@@ -1,6 +1,6 @@
 import React from "react";
 import "./SideNavLayout.css";
-import SideNavRow from "../side-nav-row/SideNavRow";
+import SideNavRow, { SideNavChannel } from "./SideNavRow";
 import {
   SideNavItemIcons,
   SideNavItemTitles,
@@ -33,6 +33,19 @@ export default function SideNavLayout() {
           />
         );
       })}
+      <vl className="sideNavLayout_divider" />
+      <SideNavChannel />
+      <SideNavChannel />
+      <SideNavChannel />
+      <SideNavChannel />
+      <SideNavChannel />
+      <SideNavChannel />
+      <SideNavChannel />
+      <SideNavChannel />
+      <SideNavChannel />
+      <SideNavChannel />
+      <SideNavChannel />
+      <SideNavChannel />
     </div>
   );
 }

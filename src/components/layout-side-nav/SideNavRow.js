@@ -1,6 +1,6 @@
 import React from "react";
 import "./SideNavRow.css";
-
+import { ReactComponent as Logo } from "../../logo.svg";
 export default function SideNavRow({
   title,
   ActiveIcon,
@@ -19,3 +19,14 @@ export default function SideNavRow({
     </div>
   );
 }
+
+function SideNavChannel() {
+  return (
+    <div className="sideNavChannel">
+      <Logo className="sideNavChannel_icon" />
+      <h3 className="sideNavRow_text_inactive">React Channel</h3>
+    </div>
+  );
+}
+
+export { SideNavChannel };

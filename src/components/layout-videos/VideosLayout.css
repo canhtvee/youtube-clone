@@ -10,7 +10,6 @@
 }
 
 .videosLayout_content {
-  display: grid;
   top: 60px;
   /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   display: flex;

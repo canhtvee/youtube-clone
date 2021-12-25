@@ -13,7 +13,7 @@ export default function IconBtn(props) {
 
   return (
     <Tooltip title={props.title}>
-      <IconButton onClick={handleClick}>
+      <IconButton className="iconBtn" onClick={handleClick}>
         {isActive ? props.activeIcon : props.inactiveIcon}
       </IconButton>
     </Tooltip>

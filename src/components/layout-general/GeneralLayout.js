@@ -1,13 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./GeneralLayout.css";
-import {
-  Routes,
-  Route,
-  Outlet,
-  useParams,
-  Navigate,
-  useNavigate,
-} from "react-router-dom";
+import { Routes, Route, Outlet, useParams, Navigate } from "react-router-dom";
 import SideNavLayout from "../layout-side-nav/SideNavLayout";
 import VideosLayout from "../layout-videos/VideosLayout";
 
@@ -17,29 +10,22 @@ export default function GeneralPage() {
       <SideNavLayout />
       <Routes>
         <Route index element={<VideosLayout />} />
-        <Route path="/feed/:pageName" element={<GeneralChildLayout />} />
+        <Route path="/feed/:pageName" element={<GeneralFeedLayout />} />
       </Routes>
       <Outlet />
     </div>
   );
 }
 
-function GeneralChildLayout() {
+function GeneralFeedLayout() {
   const pageName = useParams().pageName;
-  const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   if (pageName === "home") {
-  //     navigate("/");
-  //   }
-  // }, []);
 
   if (pageName === "home") {
     return <Navigate to={"/"} />;
   }
 
   return (
-    <div className="generalChildLayout">
+    <div className="generalFeedLayout">
       <h2>{pageName} page</h2>
     </div>
   );

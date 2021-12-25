@@ -42,14 +42,14 @@ const icons = [
   ExploreOutlined,
   Subscriptions,
   SubscriptionsOutlined,
-  History,
-  HistoryOutlined,
-  ThumbUp,
-  ThumbUpAltOutlined,
   VideoLibrary,
   VideoLibraryOutlined,
+  History,
+  HistoryOutlined,
   WatchLater,
   WatchLaterOutlined,
+  ThumbUp,
+  ThumbUpAltOutlined,
 ];
 
 const SideNavItemNames = {};

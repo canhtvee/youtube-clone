@@ -1,13 +1,14 @@
 import React from "react";
-import "./PlayingLayout.css";
-import { useParams } from "react-router-dom";
+import "./WatchLayout.css";
+import { useSearchParams } from "react-router-dom";
 
-export default function PlayingLayout() {
-  const videoId = useParams().id;
+export default function WatchLayout() {
+  const searchParams = useSearchParams()[0];
+  const videoId = searchParams.get("v") || "";
   return (
-    <div className="playingLayout">
+    <div className="watchLayout">
       <iframe
-        className="playingFrame"
+        className="watchFrame"
         width="560"
         height="315"
         src={`https://www.youtube.com/embed/${videoId}`}
