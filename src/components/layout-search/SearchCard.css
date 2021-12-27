@@ -1,0 +1,23 @@
+.searchCard {
+  margin: 10px;
+  padding-left: 20px;
+  word-wrap: break-word;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.searchCard_thumbnail {
+  width: 300px;
+  margin-right: 20px;
+}
+
+.searchCard_title {
+  width: 600px;
+  font-weight: normal;
+  font-size: large;
+  padding: 0px;
+  margin: 0px;
+}

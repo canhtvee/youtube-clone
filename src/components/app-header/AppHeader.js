@@ -12,7 +12,7 @@ import {
 } from "@mui/icons-material";
 import IconBtn from "../icon-button/IconBtn";
 import Tooltip from "@mui/material/Tooltip";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function AppHeader() {
@@ -20,13 +20,14 @@ export default function AppHeader() {
   const handleChange = (e) => {
     setSearchText(e.target.value);
   };
+
   const navigate = useNavigate();
-  const setSearchParams = useSearchParams()[1];
   const handleSearch = () => {
     const search_query = searchText.trim().replace(/ +/g, "+");
-    search_query ? setSearchParams({ search_query }) : setSearchParams({});
-    console.log("AppHeader: search_query = ", search_query);
-    navigate(`/search?search_query=${search_query}`);
+    navigate({
+      pathname: `/search`,
+      search: `?search_query=${search_query}`,
+    });
   };
 
   return (
