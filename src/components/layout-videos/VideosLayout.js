@@ -1,10 +1,6 @@
 import React from "react";
 import "./VideosLayout.css";
-import {
-  createSearchParams,
-  useNavigate,
-  useSearchParams,
-} from "react-router-dom";
+import { createSearchParams, useNavigate } from "react-router-dom";
 import { VideosData } from "../../VideosData";
 import VideoCard from "./VideoCard";
 

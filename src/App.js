@@ -4,8 +4,6 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import AppHeader from "./components/app-header/AppHeader";
 import GeneralLayout from "./components/layout-general/GeneralLayout";
 import WatchLayout from "./components/layout-watch/WatchLayout";
-import FirstComponent from "./custom-hooks/FirstComponent";
-import SecondComponent from "./custom-hooks/SecondComponent";
 
 function App() {
   return (
@@ -16,8 +14,6 @@ function App() {
         <Route path="/watch" element={<WatchLayout />} />
       </Routes>
       <Outlet />
-      {/* <FirstComponent />
-      <SecondComponent /> */}
     </div>
   );
 }

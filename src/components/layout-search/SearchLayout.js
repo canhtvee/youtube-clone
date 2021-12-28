@@ -1,24 +1,17 @@
 import React from "react";
 import "./SearchLayout.css";
-import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import { YoutubeApi } from "../../youtube-api/YoutubeApi";
 import SearchCard from "./SearchCard";
-import { VideosData } from "../../VideosData";
+import useSearch from "./useSearch";
 
 export default function SearchLayout() {
   const searchParams = useSearchParams()[0];
   let searchTerm = searchParams.get("search_query") || "";
   let queryCode = searchTerm.trim().replace(/ +/g, "%20");
+  // console.log("SearchLayout: queryCode = ", queryCode);
 
-  console.log("SearchLayout: queryCode = ", queryCode);
-
-  const [searchList, setSearchList] = useState([]);
-
-  useEffect(() => {
-    // YoutubeApi.fetchSearchList(queryCode).then((list) => setSearchList(list));
-    YoutubeApi.fetchSearchList(queryCode);
-  }, [queryCode]);
+  const resource = useSearch(queryCode);
+  // console.log("SearchLayout: resource = ", resource);
 
   const navigate = useNavigate();
   const handleClick = (id) => () => {
@@ -30,11 +23,10 @@ export default function SearchLayout() {
 
   return (
     <div className="searchLayout">
-      <h2>Search Result for "{searchTerm}"</h2>
-      {searchList.length === 0 ? (
-        <h1>loading</h1>
-      ) : (
-        searchList.map((video) => {
+      <h2>Search Results for "{searchTerm}"</h2>
+      {resource.status === "loading" && <h2>loading</h2>}
+      {resource.status === "successful" &&
+        resource.data.map((video) => {
           return (
             <SearchCard
               key={video.id}
@@ -43,8 +35,8 @@ export default function SearchLayout() {
               thumbnail={video.thumbnail}
             />
           );
-        })
-      )}
+        })}
+      {resource.status === "error" && <h2>{resource.message}</h2>}
     </div>
   );
 }

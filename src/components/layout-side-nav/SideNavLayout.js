@@ -11,8 +11,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function SideNavLayout() {
   const [activeItem, setActiveItem] = useState("Home");
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   const handleClick = (title) => () => {
     setActiveItem(title);
     const path = title === "Home" ? "/" : `/feed/${SideNavItemNames[title]}`;
