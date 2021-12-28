@@ -16,7 +16,8 @@ export default function SearchLayout() {
   const [searchList, setSearchList] = useState([]);
 
   useEffect(() => {
-    YoutubeApi.fetchSearchList(queryCode).then((list) => setSearchList(list));
+    // YoutubeApi.fetchSearchList(queryCode).then((list) => setSearchList(list));
+    YoutubeApi.fetchSearchList(queryCode);
   }, [queryCode]);
 
   const navigate = useNavigate();

@@ -67,19 +67,20 @@ function getTrendingList(items) {
   return videosList;
 }
 
-async function fetchSearchList(queryCode) {
-  const res = await fetch(`
-${SEARCH_PLAY_LIST_END_POINT}?
-part=snippet
-&maxResults=10
-&q=${queryCode}
-&key=${API_KEY}
-`);
-  const data = await res.json();
-  console.log("fetchSearchList", data);
-  const searchList = getSearchList(data.items);
-  return searchList;
-}
+// async function fetchSearchList(queryCode) {
+//   const res = await fetch(`
+// ${SEARCH_PLAY_LIST_END_POINT}?
+// part=snippet
+// &maxResults=10
+// &q=${queryCode}
+// &key=${API_KEY}
+// `);
+//   const data = await res.json();
+//   console.log("fetchSearchList: res = ", res);
+//   console.log("fetchSearchList: data = ", data);
+//   const searchList = getSearchList(data.items);
+//   return searchList;
+// }
 
 function getSearchList(items) {
   const videosList = [];
@@ -91,4 +92,35 @@ function getSearchList(items) {
     videosList.push(video);
   });
   return videosList;
+}
+
+async function fetchSearchList(queryCode) {
+  const url = `${SEARCH_PLAY_LIST_END_POINT}?part=snippet&maxResults=10&q=${queryCode}&key=${API_KEY}`;
+  // const url = "https://www.themealdb.com/api/json/v1/1/random.php";
+  let res;
+  let result = {};
+
+  try {
+    res = await fetch(url);
+    console.log("fetchSearchList: res = ", res);
+    if (res.ok) {
+      // result.data = getSearchList(await res.json().items);
+      result.data = (await res.json()).items;
+      result.status = "successful";
+      result.message = "fetch successful";
+      console.log("fetchSearchList: result = ", result);
+      return result;
+    } else {
+      result.status = "failed";
+      result.message = "fetch failed";
+      console.log("fetchSearchList: result = ", result);
+      return result;
+    }
+  } catch (e) {
+    // result.status = "error";
+    // result.message = `fetch error, ${e}`;
+    console.log("fetchSearchList: result = ", result);
+  }
+
+  return result;
 }
