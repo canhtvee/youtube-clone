@@ -1,4 +1,4 @@
-.header {
+.appHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,25 +10,25 @@
   background-color: white;
 }
 
-.header_left {
+.appHeader_left {
   display: flex;
   align-items: center;
 }
 
-.header_logo {
+.appHeader_logo {
   cursor: pointer;
   height: 20px;
   margin-left: 20px;
   object-fit: contain;
 }
 
-.header_input {
+.appHeader_input {
   display: flex;
   align-items: center;
   width: 50%;
 }
 
-.header_input > input {
+.appHeader_input > input {
   flex: 1;
   height: 28px;
   padding-left: 10px;
@@ -36,11 +36,11 @@
   font-size: medium;
 }
 
-.header_input > input:focus {
+.appHeader_input > input:focus {
   outline: none;
 }
 
-.header_input_btn {
+.appHeader_input_btn {
   width: 64px !important;
   height: 26px !important;
   background-color: #fafafa;
@@ -49,12 +49,12 @@
   padding: 2px;
 }
 
-.header_icons {
+.appHeader_icons {
   display: flex;
   align-items: center;
 }
 
-.header_avatar {
+.appHeader_avatar {
   height: 30px;
   border-radius: 50%;
 }

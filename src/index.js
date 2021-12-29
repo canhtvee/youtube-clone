@@ -13,6 +13,10 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root"),
 );
+document.documentElement.style.setProperty(
+  "--scrollbar-width",
+  window.innerWidth - document.documentElement.clientWidth + "px",
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

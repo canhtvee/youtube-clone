@@ -6,31 +6,29 @@ export const YoutubeApi = {
   fetchSearchList,
 };
 
-async function fetchSearchList(queryCode) {
+async function fetchSearchList(searchTerm) {
+  let queryCode = searchTerm.trim().replace(/ +/g, "%20");
   const url = `${SEARCH_PLAY_LIST_END_POINT}?part=snippet&maxResults=10&q=${queryCode}&key=${API_KEY}`;
   let res;
   let result = {};
-
   try {
     res = await fetch(url);
-    if (res.ok) {
-      result.data = getSearchList((await res.json()).items);
-      result.status = "successful";
-      result.message = "fetch successful";
-      return result;
-    } else {
+    if (!res.ok) {
       result.status = "failed";
       result.message = "fetch failed";
       result.data = "not available";
       return result;
     }
+    result.data = getSearchList((await res.json()).items);
+    result.status = "successful";
+    result.message = "fetch successful";
+    return result;
   } catch (e) {
     result.status = "error";
     result.message = `fetch error, ${e}`;
     result.data = "not available";
+    return result;
   }
-
-  return result;
 }
 
 function getSearchList(items) {

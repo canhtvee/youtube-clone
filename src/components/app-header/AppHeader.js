@@ -30,27 +30,34 @@ export default function AppHeader() {
     });
   };
 
+  const handleKeyUp = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
-    <div className="header">
-      <div className="header_left">
+    <div className="appHeader">
+      <div className="appHeader_left">
         <IconBtn title="" activeIcon={<Menu />} inactiveIcon={<Menu />} />
         <img
           onClick={() => navigate("/")}
-          className="header_logo"
+          className="appHeader_logo"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1920px-YouTube_Logo_2017.svg.png"
           alt=""
         />
       </div>
 
-      <div className="header_input">
+      <div className="appHeader_input">
         <input
           type="text"
           placeholder="search"
           value={searchText}
           onChange={handleChange}
+          onKeyUp={handleKeyUp}
         />
         <Tooltip title="Search">
-          <Search className="header_input_btn" onClick={handleSearch} />
+          <Search className="appHeader_input_btn" onClick={handleSearch} />
         </Tooltip>
 
         <IconBtn
@@ -60,7 +67,7 @@ export default function AppHeader() {
         />
       </div>
 
-      <div className="header_icons">
+      <div className="appHeader_icons">
         <IconBtn
           title="Create"
           activeIcon={<VideoCall />}
@@ -77,7 +84,7 @@ export default function AppHeader() {
           inactiveIcon={<NotificationsOutlined />}
         />
         <img
-          className="header_avatar"
+          className="appHeader_avatar"
           src="https://avatars.githubusercontent.com/u/65144310?v=4"
           alt=""
         />

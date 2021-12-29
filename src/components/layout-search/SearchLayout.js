@@ -1,18 +1,15 @@
 import React from "react";
 import "./SearchLayout.css";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import SearchCard from "./SearchCard";
 import useSearch from "./useSearch";
 
 export default function SearchLayout() {
   const [searchParams] = useSearchParams();
   let searchTerm = searchParams.get("search_query") || "";
-  let queryCode = searchTerm.trim().replace(/ +/g, "%20");
   // console.log("SearchLayout: queryCode = ", queryCode);
-
-  const resource = useSearch(queryCode);
+  const resource = useSearch(searchTerm);
   // console.log("SearchLayout: resource = ", resource);
-
   const navigate = useNavigate();
   const handleClick = (id) => () => {
     navigate({

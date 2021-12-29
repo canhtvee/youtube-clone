@@ -1,0 +1,45 @@
+.container {
+  background-color: lightgray;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  height: 60px;
+  top: 0;
+  background-color: lightblue;
+}
+
+.body {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+}
+.bodyLeft {
+  display: flex;
+  flex: 0.15;
+  flex-direction: column;
+  min-width: 200px;
+  height: calc(100vh - 60px - var(--scrollbar-width));
+  position: sticky;
+  top: 60px;
+  background-color: lightgreen;
+  overflow-y: scroll;
+  scrollbar-color: white grey;
+}
+
+.bodyRight {
+  flex: 0.85;
+  display: flex;
+  flex-wrap: wrap;
+  right: 0px;
+  background-color: rgb(240, 240, 240);
+}
+.bodyRight > h2 {
+  background-color: lightcoral;
+  margin: 20px;
+  min-width: 400px;
+}
