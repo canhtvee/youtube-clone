@@ -5,7 +5,7 @@ import SearchCard from "./SearchCard";
 import useSearch from "./useSearch";
 
 export default function SearchLayout() {
-  const searchParams = useSearchParams()[0];
+  const [searchParams] = useSearchParams();
   let searchTerm = searchParams.get("search_query") || "";
   let queryCode = searchTerm.trim().replace(/ +/g, "%20");
   // console.log("SearchLayout: queryCode = ", queryCode);

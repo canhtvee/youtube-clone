@@ -3,9 +3,9 @@ import "./WatchLayout.css";
 import { useSearchParams } from "react-router-dom";
 
 export default function WatchLayout() {
-  const searchParams = useSearchParams()[0];
+  const [searchParams] = useSearchParams();
   const videoId = searchParams.get("v") || "";
-  console.log(videoId);
+  // console.log(videoId);
   return (
     <div className="watchLayout">
       <iframe
