@@ -9,12 +9,13 @@ import FirstComponent from "./global-states/FirstComponent";
 function App() {
   return (
     <div className="app">
-      <AppHeader />
+      {/* <AppHeader />
       <Routes>
         <Route exact path="/*" element={<AppBody />} />
         <Route path="/watch" element={<WatchLayout />} />
       </Routes>
-      <Outlet />
+      <Outlet /> */}
+      <FirstComponent />
     </div>
   );
 }

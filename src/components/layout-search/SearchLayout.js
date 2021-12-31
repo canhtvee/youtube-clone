@@ -7,9 +7,18 @@ import useSearch from "./useSearch";
 export default function SearchLayout() {
   const [searchParams] = useSearchParams();
   let searchTerm = searchParams.get("search_query") || "";
-  // console.log("SearchLayout: queryCode = ", queryCode);
-  const resource = useSearch(searchTerm);
-  // console.log("SearchLayout: resource = ", resource);
+
+  const searchResource = useSearch(searchTerm);
+
+  return (
+    <div className="searchLayout">
+      <h2>Search Results for "{searchTerm}"</h2>
+      <SearchContent resource={searchResource} />
+    </div>
+  );
+}
+
+const SearchContent = ({ resource }) => {
   const navigate = useNavigate();
   const handleClick = (id) => () => {
     navigate({
@@ -18,22 +27,20 @@ export default function SearchLayout() {
     });
   };
 
-  return (
-    <div className="searchLayout">
-      <h2>Search Results for "{searchTerm}"</h2>
-      {resource.status === "loading" && <h2>loading</h2>}
-      {resource.status === "successful" &&
-        resource.data.map((video) => {
-          return (
-            <SearchCard
-              key={video.id}
-              onClick={handleClick(video.id)}
-              title={video.title}
-              thumbnail={video.thumbnail}
-            />
-          );
-        })}
-      {resource.status === "error" && <h2>{resource.message}</h2>}
-    </div>
-  );
-}
+  if (resource.status === "successful") {
+    return resource.data.map((video) => {
+      return (
+        <SearchCard
+          key={video.id}
+          onClick={handleClick(video.id)}
+          title={video.title}
+          thumbnail={video.thumbnail}
+        />
+      );
+    });
+  }
+  if (resource.status === "error") {
+    return <h2>{resource.message}</h2>;
+  }
+  return <h2>loading...</h2>;
+};

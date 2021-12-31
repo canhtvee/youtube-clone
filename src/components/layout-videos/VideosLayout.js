@@ -1,7 +1,7 @@
 import React from "react";
 import "./VideosLayout.css";
 import { createSearchParams, useNavigate } from "react-router-dom";
-import { VideosData } from "../../VideosData";
+import { VideosData } from "../../youtube-api/VideosData";
 import VideoCard from "./VideoCard";
 
 export default function VideosLayout() {

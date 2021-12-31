@@ -6,22 +6,20 @@ export default function FirstComponent() {
   // const [count, setCount] = useCount();
 
   const [state, setState] = useState(0);
-  const [render, setRender] = useState();
   console.log("render");
   const handleClick = () => {
-    setState((prev) => prev + 1);
+    setState((prv) => prv + 1);
   };
-
-  useEffect(() => {
-    console.log("call useEffect on depens change");
-  }, [state]);
 
   return (
     <div>
       <h3>FirstComponent</h3>
-      <h3>{state}</h3>
+      <Child number={state} />
       <button onClick={handleClick}>Count Up</button>
-      <button onClick={() => setRender({})}>Call setRender</button>
     </div>
   );
 }
+
+const Child = ({ number }) => {
+  return <h2>{number}</h2>;
+};
