@@ -4,6 +4,7 @@
   flex-direction: column;
   min-width: 200px;
   height: calc(100vh - 60px - var(--scrollbar-width));
+  height: calc(100vh - 60px);
   position: sticky;
   top: 60px;
   background-color: white;
