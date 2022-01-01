@@ -26,7 +26,7 @@ export default function useSearch(searchTerm) {
       setSearchResult(resource);
     };
 
-    // fetchFromRemote(searchTerm);
+    fetchFromRemote(searchTerm);
   }, [searchTerm]);
 
   return seachResult;
